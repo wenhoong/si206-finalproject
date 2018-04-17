@@ -353,15 +353,27 @@ def interactive_prompt():
             print('Bye!')
 
         elif response == 'help':
-            print('None')
+            print('Available commands:\n'
+              'plot crime_frequency bar\n'
+              '\tcreates a bar chart of crime frequency by type.\n'
+              'plot crime_time bubble\n'
+              '\tcreates a bubble chart of crime rates by the hour of the day.\n'
+              'plot crime_locations table\n'
+              '\tcreates a table of road names in Ann Arbor and crime rates.\n'
+              'plot crime_over_time line\n'
+              '\tcreates a line graph of crime rates over the past 9 years.\n'
+              'help\n'
+              '\tprints these options\n'
+              'exit\n'
+              '\tquits the program')
 
-        elif response == 'plot crime_type bar':
+        elif response == 'plot crime_frequency bar':
             data = [go.Bar(x=[d for d in crime_frequency().keys()], y=[e for e in crime_frequency().values()], marker=dict(color='red'))]
             layout = go.Layout(title='Instances of Crime by Type',)
             fig = go.Figure(data=data, layout=layout)
             py.plot(fig, filename='basic-bar')
 
-        elif response == 'plot crime_hour bubble':
+        elif response == 'plot crime_time bubble':
             size = [100, 70, 60, 40, 30, 20, 20, 20, 30, 40, 60, 70, 90, 80, 60, 80, 60, 50, 40, 30, 20, 20, 30, 60]
             trace0 = go.Scatter(x=[t for t in crime_time().keys()], y=[u for u in crime_time().values()], mode='markers',
             marker=dict(size=size,sizemode='area',sizeref=2.*max(size)/(40.**2),sizemin=4))
@@ -400,6 +412,8 @@ def interactive_prompt():
             print('Command not found. Enter "help" for more info.')
 
 if __name__ == "__main__":
-    # interactive_prompt()
-    print(crime_time())
-    print(crime_over_time())
+    # get_daily_crime_data()
+    # csv_init_db()
+    # table_2_db()
+    # update_data()
+    interactive_prompt()
