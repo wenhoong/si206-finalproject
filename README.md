@@ -7,10 +7,16 @@ My program has three main parts, the first part being scraping and caching the d
 How to use the program:
 1) Run the function get_daily_crime_data() to scrape and cache the webpages for crime data in Ann Arbor. This will take about 30 minutes to finish caching.
 2) Run csv_init_db(), table_2_db(), update_data() to create database.
-3) Call the function interactive_prompt(), which allows you to create plots from the database.
-  - "plot crime_frequency bar"
-  - "plot crime_time bubble"
-  - "plot crime_locations table"
-  - "plot crime_over_time line"
-  - "help"
-  - "exit"
+3) Call the function interactive_prompt(), which allows you to create plots from the database. Available commands:
+  "plot crime_frequency bar"
+  - creates a bar chart of crime frequency by type.
+  "plot crime_time bubble"
+  - creates a bubble chart of crime rates by the hour of the day.
+  "plot crime_locations table"
+  - creates a table of road names in Ann Arbor and crime rates.
+  "plot crime_over_time line"
+  - creates a line graph of crime rates over the past 9 years.
+  "help"
+  - prints these options
+  "exit"
+  - quits the program
