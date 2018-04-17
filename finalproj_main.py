@@ -400,4 +400,6 @@ def interactive_prompt():
             print('Command not found. Enter "help" for more info.')
 
 if __name__ == "__main__":
-    interactive_prompt()
+    # interactive_prompt()
+    print(crime_time())
+    print(crime_over_time())

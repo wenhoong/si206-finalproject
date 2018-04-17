@@ -48,7 +48,16 @@ class TestData(unittest.TestCase):
         crime_locations()
         self.assertIn('WASHTENAW', crime_locations())
         self.assertEqual(crime_locations()['STADIUM'], 345)
-        self.assertEqual(len(crime_locations()), 1435)
+        self.assertEqual(len(crime_locations()), 1230)
         self.assertNotIn('ANN ARBOR', crime_locations())
+
+    def test_data_processing2(self):
+        crime_time()
+        self.assertEqual(crime_time()['2PM'], 987)
+        self.assertEqual(len(crime_time()),24)
+        crime_over_time()
+        self.assertEqual(crime_over_time()['2017'], 3548)
+        self.assertEqual(len(crime_over_time()), 9)
+        self.assertNotIn('2019', crime_over_time())
 
 unittest.main()
