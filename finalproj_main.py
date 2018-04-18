@@ -348,7 +348,7 @@ def crime_over_time():
 def interactive_prompt():
     response = ''
     while response != 'exit':
-        response = input("Enter command here: ")
+        response = input("Enter command here (enter 'help' for options): ")
         if response == 'exit':
             print('Bye!')
 
